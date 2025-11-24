@@ -1,0 +1,26 @@
+Exercise 64: 
+
+We have finalised our Arg class and have made a little program that can read
+and edit files line by line using only commandline arguments to test and use
+our fancy new Arg class!
+
+Something that is worth criticism is the large size of our second arg 
+constructor. It makes sense for this member to be comprehensive, but it can
+definitely do with some further compactifying! We will leave it as-is for now.
+
+As for the flaw in the class, if we are doing this correctly using a function
+local static object rather than a truly dynamically allocated one, then that
+is definitely something that could do with improvement. Unique pointers seem
+to be the go to here but they have not been covered and as such are not a
+valid solution yet. We may end up getting issues with object lifetime or
+ownership ambiguity, since the arg object "lives" inside the initialise()
+function.
+
+Another issue of course is that we are calling exit(1) when the Arg object is
+multiply initialised, or instance() is called before the Arg object is made. 
+Currently we could simply skip the re-initialisation and hand back the 
+existing object, maybe showing an error message, but as try/catch has not 
+been covered yet it is not going to be very pretty for now.
+
+Beneath the Arg class code we show the code of our little test program. Feel
+free to ignore it as it is not part of the exercise!
