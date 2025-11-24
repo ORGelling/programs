@@ -1,1 +1,2 @@
 First line in file
+Second line in a while
