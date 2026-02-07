@@ -1,0 +1,8 @@
+#include <string>
+#include <unistd.h>
+//#include stdlib.h>
+#include <vector>
+#include <iostream>
+#include <iterator>
+
+using namespace std;
