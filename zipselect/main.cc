@@ -8,23 +8,29 @@ namespace {
         "-r",
         "-i",
         "*.cc",
+        "*.i",
+        "*.l",
+        "*.p",
         "*.h",
         "*.ih",
-        "*.txt"
+        "*.txt",
     };
+    
+    constexpr size_t comSize = sizeof(zipComs) / sizeof(zipComs[0]);
+    
     
     vector<string> makeStrArgs(int argc, char **argv)
     {
         vector<string> strArgs;
         vector<string> commands(argv + 1, argv + argc);
     
-        for (size_t idx = 0; idx != 2; ++idx)
+        for (size_t idx = 0; idx != 2; ++idx)   // initial command and flag
             strArgs.push_back(zipComs[idx]);
         
-        for (string const &name : commands)
+        for (string const &name : commands)     // passed .zip package name
             strArgs.push_back(name);
         
-        for (size_t idx = 2; idx != 7; ++idx)
+        for (size_t idx = 2; idx != comSize; ++idx)   // all the extensions
             strArgs.push_back(zipComs[idx]);
         
         return strArgs;
