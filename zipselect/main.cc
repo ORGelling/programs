@@ -6,15 +6,27 @@ namespace {
     {
         "zip",
         "-r",
+        "-x",
+        "*/tmp/*",
+        "*/CLASSES",
+        "*/icmconf"
+    };
+    
+    /*
+    char const *zipComs[] = 
+    {
+        "zip",
+        "-r",
         "-i",
         "*.cc",
         "*.i",
-        "*.l",
-        "*.p",
+        "grammar",
+        "lexer",
         "*.h",
         "*.ih",
         "*.txt",
     };
+    */
     
     constexpr size_t comSize = sizeof(zipComs) / sizeof(zipComs[0]);
     
